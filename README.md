@@ -15,7 +15,7 @@ So you want to identify hotdogs - great! Summer is just around the corner, and y
 
 
 ## Overview
-This repo will walk you through the steps, and technologies to train a Deep Learning model using a Convolutional Netural Network, evaluate its accuracy, and save it into a format that can be loaded on an iOS device. With a model converted to Apple's CoreML format we will load a `.mlmodel` into an opensource project: [Lumina](https://github.com/dokun1/lumina).  Within Lumina you can quickly import and activate your .mlmodel, and stream object predictions in real time from the camera feed...Let me repeat, you can stream object predictions from the camera feed in real time - and you can do this with one line of code.
+This repo will walk you through the steps, and technologies to train a Deep Learning model using a Convolutional Neural Network, evaluate its accuracy, and save it into a format that can be loaded on an iOS device. With a model converted to Apple's CoreML format we will load a `.mlmodel` into an opensource project: [Lumina](https://github.com/dokun1/lumina).  Within Lumina you can quickly import and activate your `.mlmodel`, and stream object predictions in real time from the camera feed... Let me repeat, you can stream object predictions from the camera feed in real time - and you can do this with one line of code.
 
 <p align="center">
 	<img src="images/flow.png">
