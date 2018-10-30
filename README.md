@@ -202,7 +202,7 @@ sudo poweroff --force
 # See the result
 
 <p align="center">
-    <img src="doc/source/images/demo.gif">
+    <img src="images/demo.gif">
 </p>
 
 
