@@ -61,7 +61,7 @@ Follow these steps to setup and run this *phenomenon sweeping the vegan meat ind
 1. [Access and start the Jupyter Notebook](#2-access-and-start-the-jupyter-notebook)
 1. [Run the notebook](#3-run-the-notebook)
 1. [Save and share your model ](#4-save-and-share-your-model)
-1. [Implement Your Model With Lumina](#5-Implement-Your-Model-With-Lumina)
+1. [Implement Your Model With Lumina](#5-implement-your-model-with-lumina)
 1. [End your trial](#6-end-your-trial)
 
 ### 1. Get 24-Hours of free access to the PowerAI platform
@@ -106,7 +106,7 @@ Use git clone to download the example notebook.
 * Run the following command to clone the git repo:
 
   ```commandline
-  git clone https://github.com/justinmccoy/keras-binary-classifier
+  git clone https://github.com/IBM/keras-binary-classifier
   ```
 
 * Once done, you can exit the terminal and return to the notebook browser. Use the ``Files`` tab and click on ``keras-binary-classifier`` then ``notebooks`` and then ``Hotdog_NotHotdog_CNN.ipynb`` to open the notebook.
