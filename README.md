@@ -151,7 +151,9 @@ Select `Download  as...` and then `seefood.mlmodel` to download your trained foo
 In the terminal, Go to your project directory and open folder `HotDogNotHotDog` and run `carthage update --platform iOS` to install dependencies.
 
 `$ cd keras-binary-classifier`
+
 `$ cd HotDogNotHotDog`
+
 `$ carthage carthage update --platform iOS`
 
 After the dependencies are installed, open the iOS project in Xcode by running below from the terminal.
