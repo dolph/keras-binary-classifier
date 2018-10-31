@@ -162,13 +162,13 @@ After the dependencies are installed, open the iOS project in Xcode by running b
 
 Run your app, and point the camera at a hot dog, then at anything that isn't a hot dog. The results speak for themselves!
 
-> Note: you need to make sure the name of the model is `seefood.mlmodel`. In case if it is saved with a different name, go to file `ViewController.swift` in Xcode and change the line where it has:
+> Note: you need to make sure the name of the model is `seefood.mlmodel`. In case if it is saved with a different name, go to    file `ViewController.swift` in Xcode and change the line where it has:
 
-`camera.streamingModels = [LuminaModel(model: seefood().model, type: "See Food")]` to the name you saved the ml model with.
+> `camera.streamingModels = [LuminaModel(model: seefood().model, type: "See Food")]` to the name you saved the ml model with.
 
-for example if the name is `foo.mlmodel`, change the line as below:
+> for example if the name is `foo.mlmodel`, change the line as below:
 
-`camera.streamingModels = [LuminaModel(model: foo().model, type: "See Food")]`
+> `camera.streamingModels = [LuminaModel(model: foo().model, type: "See Food")]`
 
 
 ### 6. End your trial
