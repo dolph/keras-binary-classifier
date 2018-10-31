@@ -61,7 +61,7 @@ Follow these steps to setup and run this *phenomenon sweeping the vegan meat ind
 1. [Access and start the Jupyter Notebook](#2-access-and-start-the-jupyter-notebook)
 1. [Run the notebook](#3-run-the-notebook)
 1. [Save and share your model ](#4-save-and-share-your-model)
-1. [Implement Your Model With Lumina](#5-implement-your-model-with-lumina)
+1. [Run iOS app](#5-run-ios-app)
 1. [End your trial](#6-end-your-trial)
 
 ### 1. Get 24-Hours of free access to the PowerAI platform
@@ -146,50 +146,28 @@ Under the `File` menu, there are options to:
 
 Select `Download  as...` and then `seefood.mlmodel` to download your trained food classifier.
 
-### 5. Implement your model with Lumina
+### 5. Run iOS App
 
-You'll need to start an iOS project that uses the **Lumina** framework. You can either clone the repository [here](https://github.com/dokun1/lumina) and use the `LuminaSample` app in the main workspace, or you can make your own iOS app using the framework. Watch [this](https://www.youtube.com/watch?v=8eEAvcy708s) video for more information on using Lumina.
+In the terminal, Go to your project directory and open folder `HotDogNotHotDog` and run `carthage update --platform iOS` to install dependencies.
 
-Once you have a project open with Lumina integrated, make sure you implement a camera with at least the following code:
+`$ cd keras-binary-classifier`
+`$ cd HotDogNotHotDog`
+`$ carthage carthage update --platform iOS`
 
-```swift
-let camera = LuminaViewController()
-camera.delegate = self
-camera.streamingModelTypes = [seefood()]
-present(camera, animated: true)
-```
+After the dependencies are installed, open the iOS project in Xcode by running below from the terminal.
 
-At this point, your iOS app is already making use of the `CoreML` functionality embedded in Lumina. Now, you need to actually do something with the data returned from it.
-
-Extend your class to conform to `LuminaDelegate` like so:
-
-```swift
-extension ViewController: LuminaDelegate {
-    func streamed(videoFrame: UIImage, with predictions: [LuminaRecognitionResult]?, from controller: LuminaViewController) {
-    
-    }
-}
-```
-
-Results streamed from each video frame are given to you in this delegate method. In this example, you have created a binary classifier, so you should only expect one result with either a `1.0` or `0.0` result. Lumina has a built in text label to use as a prompt, so update your method to make use of it here like so:
-
-```swift
-func streamed(videoFrame: UIImage, with predictions: [LuminaRecognitionResult]?, from controller: LuminaViewController) {
-    guard let predicted = predictions else {
-        return
-    }
-    guard let value = predicted.first?.predictions?.first else {
-        return
-    }
-    if value.confidence > 0 {
-        controller.textPrompt = "\(String(describing: predicted.first?.type)): Not Hot Dog"
-    } else {
-        controller.textPrompt = "\(String(describing: predicted.first?.type)): Hot Dog"
-    }
-}
-```
+`$ open HotDogNotHotDog.xcodeproj`
 
 Run your app, and point the camera at a hot dog, then at anything that isn't a hot dog. The results speak for themselves!
+
+> Note: you need to make sure the name of the model is `seefood.mlmodel`. In case if it is saved with a different name, go to file `ViewController.swift` in Xcode and change the line where it has:
+
+`camera.streamingModels = [LuminaModel(model: seefood().model, type: "See Food")]` to the name you saved the ml model with.
+
+for example if the name is `foo.mlmodel`, change the line as below:
+
+`camera.streamingModels = [LuminaModel(model: foo().model, type: "See Food")]`
+
 
 ### 6. End your trial
 
